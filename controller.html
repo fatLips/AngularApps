@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html data-ng-app = "notesApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body data-ng-controller = "MainCtrl as ctrl">
+	<form data-ng-submit='ctrl.submit()' name="myForm">
+		<input type = 'text'
+				data-ng-model = "ctrl.user.username"
+				required
+				data-ng-minlength="4"/>
+		<input type = 'password'
+				data-ng-model = "ctrl.user.password"
+				required/>
+		<input type = "submit"
+				value = "submit"
+				data-ng-disabled = "myFrom.$invalid"/>
+        {{myForm.$invalid}}
+	</form>
+</body>
+<script type="text/javascript">
+	angular.module('notesApp', []).controller('MainCtrl', [function(){
+			var self = this;
+			self.submit = function(){
+				console.log('User clicked the submit button' + self.user.username);
+			};
+		}]);
+</script>
+</html>
