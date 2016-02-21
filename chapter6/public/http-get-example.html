@@ -1,0 +1,14 @@
+<html data-ng-app = "notesApp">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="./notesApp.js"></script>
+  <head>
+    <title>$http get example</title>
+  </head>
+  <body ng-controller = "MainCtrl as mainCtrl">
+    <h1>Note service</h1>
+    <div ng-repeat = "todo in mainCtrl.items">
+      <div><span ng-bind = "todo.label"></span></div>
+      <div>- by <span ng-bind = "todo.author"></span></div>
+    </div>
+  </body>
+</html>
