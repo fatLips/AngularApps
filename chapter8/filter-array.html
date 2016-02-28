@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="./filterArrayApp.js"></script>
+  </head>
+  <body ng-app="filterArrayApp">
+    <div ng-controller = "filterCtrl as ctrl">
+      <div>
+        <button ng-click = "ctrl.currentFilter = 'string'" >filter by string</button>
+      </div>
+      <div>
+        <input type="text" ng-model = "ctrl.filterOptions['string']" />
+      </div>
+      <div>
+        <button ng-click="ctrl.currentFilter = 'object'">filter by object</button>
+      </div>
+      <div>
+        <ul>
+          <li ng-repeat = "note in ctrl.notes |
+                           filter: ctrl.filterOptions[ctrl.currentFilter] |
+                           limitTo: 10 |
+                           orderBy: ctrl.sortOrder" >
+            {{note.label}} - {{note.type}} - {{note.done}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

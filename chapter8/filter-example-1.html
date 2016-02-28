@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="./filterApp.js"></script>
+  </head>
+  <body ng-app = "filterApp">
+    <div ng-controller = "FilterCtrl as ctrl">
+      <div>{{ctrl.amount | number}}</div>
+      <div>{{ctrl.totalCost | currency}}</div>
+      <div>{{ctrl.name | uppercase}}</div>
+      <div>start time: {{ctrl.startTime | date}}</div>
+      <div>start time | date: {{ctrl.startTime | date}}</div>
+      <div>start time | date: 'medium': {{ctrl.startTime | date:'medium'}}</div>
+    </div>
+  </body>
+</html>
