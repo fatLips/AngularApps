@@ -1,11 +1,18 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="./libs/router.es5.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.9/angular-route.min.js"></script>
     <script src="./simpleRoutingApp.js"></script>
   </head>
-  <body>
-    fed
-    adsfadsfadsfadsfa
+  <body ng-app="simpleRoutingApp">
+    <ul>
+      <li><a href = "#/">default route</a></li>
+      <li><a href = "#/second">second route</a></li>
+      <li><a href = "#/protected">protected route</a></li>
+      <li><a href = "#/detail/123?q=hello">detail route</a></li>
+      <li><a href = "#/asdfasdf">nonexisitent route</a></li>
+    </ul>
+
+    <div ng-view></div>
   </body>
 </html>
